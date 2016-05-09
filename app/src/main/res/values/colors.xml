@@ -3,12 +3,15 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorbutton1">#86bbd4</color>
-    <color name="colorbutton2">#74cc48</color>
-    <color name="colorbutton3">#cc371c</color>
-    <color name="colorbutton4">#b8b894</color>
-    <color name="colorpressedbutton1">#3399ff</color>
-    <color name="colorpressedbutton2">#00b300</color>
-    <color name="colorpressedbutton3">#990000</color>
-    <color name="colorpressedbutton4">#4d4d33</color>
+
+
+    <color name="background">#fdf5c9</color>
+    <color name="colorbutton1">#ffcc7f</color>
+    <color name="colorbutton2">#f17fb9</color>
+    <color name="colorbutton3">#c5e9fd</color>
+    <color name="colorbutton4">#dbe77f</color>
+    <color name="colorpressedbutton1">#ff9900</color>
+    <color name="colorpressedbutton2">#e30074</color>
+    <color name="colorpressedbutton3">#8bd3fb</color>
+    <color name="colorpressedbutton4">#b8d000</color>
 </resources>
