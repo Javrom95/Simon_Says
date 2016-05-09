@@ -18,7 +18,8 @@ public class Simon extends AppCompatActivity {
 
     Button btn1, btn2, btn3, btn4;
     ArrayList<Integer> sequence = new ArrayList<Integer>();
-    int trans, add, rounds=4, time= 1250;
+    int trans, add, rounds=4;
+    long time= 1250;
    /* final MediaPlayer audiobutton1 = MediaPlayer.create(this, R.raw.button1);
     * final MediaPlayer audiobutton2 = MediaPlayer.create(this, R.raw.button2);
     * final MediaPlayer audiobutton3 = MediaPlayer.create(this, R.raw.button3);
@@ -48,27 +49,17 @@ public class Simon extends AppCompatActivity {
 
             if(add==1){
                 //Reproduce sound.
-                final Handler handler = new Handler();
-                final Runnable runnable = new Runnable() {
-                    public void run() {
-                        btn1.setBackgroundResource(R.color.colorpressedbutton1);
-                        handler.postDelayed(this, time);
-                    }
-                };
+                changeButton1();
 
-                btn1.setBackgroundResource(R.drawable.button1_pressed);
             }else if(add==2){
-            btn2.setBackgroundResource(R.color.colorpressedbutton2);
                 //Reproduce sound,
-                btn2.setBackgroundResource(R.drawable.button2_pressed);
+               changeButton2();
             }else if(add==3){
-            btn3.setBackgroundResource(R.color.colorpressedbutton3);
                 //Reproduce sound.
-                btn3.setBackgroundResource(R.drawable.button3_pressed);
+                changeButton3();
             }else{
-            btn4.setBackgroundResource(R.color.colorpressedbutton4);
                 //Reproduce sound.
-                btn4.setBackgroundResource(R.drawable.button4_pressed);
+                changeButton4();
             }
             sequence.add(add);
         }
@@ -76,10 +67,58 @@ public class Simon extends AppCompatActivity {
     }
 
 
+    public void changeButton1() {
+        btn1.setBackgroundResource(R.color.colorpressedbutton1);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                btn1.setBackgroundResource(R.drawable.button1_pressed);
+            }
+        }, time);
+
+    }
+
+    public void changeButton2(){
+
+        btn2.setBackgroundResource(R.color.colorpressedbutton2);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                btn2.setBackgroundResource(R.drawable.button2_pressed);
+            }
+        }, time);
+
+    }
+
+    public void changeButton3(){
+
+        btn3.setBackgroundResource(R.color.colorpressedbutton3);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                btn3.setBackgroundResource(R.drawable.button3_pressed);
+            }
+        }, time);
+
+    }
+
+    public void changeButton4(){
+
+        btn4.setBackgroundResource(R.color.colorpressedbutton4);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            public void run() {
+                btn4.setBackgroundResource(R.drawable.button4_pressed);
+            }
+        }, time);
+
+    }
+
+
+ }
 
 
 
 
 
 
-}
