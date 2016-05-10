@@ -21,7 +21,7 @@ public class Simon extends AppCompatActivity {
 
     Button btn1, btn2, btn3, btn4, btnmrk;
     ArrayList<Integer> sequence = new ArrayList<Integer>();
-    int trans, add, rounds=4, counter=0;
+    int trans, add, rounds=4, counter=0, i=-1;
     Random r = new Random();
    /*
     */
@@ -47,7 +47,10 @@ public class Simon extends AppCompatActivity {
 
     }
 
+
+    //Method that creates the sequence of numbers.
     public void createSequence(){
+        sequence.clear();
         for(byte i=0;i<rounds;i++){
                     add=r.nextInt((rounds - 1) + 1) + 1;
                     if(add==1){
@@ -68,45 +71,39 @@ public class Simon extends AppCompatActivity {
 
     }
 
-
+   //This method will check if the buttons are clicked in the order obtained in the createSequence method.
     public void repeatSequence(int button){
-        int i=0;
-        if(i<sequence.size()) {
+        Log.i("Executing repeatSequ.","Executing.....");
+        i++;
+        Log.i("Value in original:",""+sequence.get(i));
             if (button == sequence.get(i)) {
-                i++;
+                Log.i("Aladeen1:",""+i);
                 Log.i("Correct.","Correct value.");
                 Log.i("Position: ","Position "+i+" of "+sequence.size()+".");
-            } else {
-
-            }
-        }
-        if(i==sequence.size()){
-                i=0;
-                counter++;
-                //btnmrk.setText(counter);
-                Log.i("Correctly ended.","Correctly ended.");
-                rounds++;
-                Log.i("Sequence number:","1.");
+                Log.i("Aladeen2:",""+i);
+            }else{
+                Log.i("Incorrect value.","Recreating sequence.");
+                i=-1;
                 createSequence();
-        }
+            }
     }
 
-
+//These methods executes repeatSequence. The value of the parameter is the value of the button.
     public void btn1Click(View view){
-        repeatSequence(1);
         Log.i("Value pushed:","1.");
+        repeatSequence(1);
     }
     public void btn2Click(View view){
-        repeatSequence(2);
         Log.i("Value pushed:","2.");
+        repeatSequence(2);
     }
     public void btn3Click(View view){
-        repeatSequence(3);
         Log.i("Value pushed:","3");
+        repeatSequence(3);
     }
     public void btn4Click(View view){
-        repeatSequence(4);
         Log.i("Value pushed:","4.");
+        repeatSequence(4);
     }
 
 
