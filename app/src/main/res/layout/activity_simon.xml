@@ -20,21 +20,23 @@
             android:id="@+id/tableRow1"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" >
+            android:layout_weight="1">
 
             <Button
                 android:id="@+id/button1"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:background="@drawable/button1_pressed"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="btn1Click" />
 
             <Button
                 android:id="@+id/button2"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:background="@drawable/button2_pressed"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="btn2Click" />
         </TableRow>
 
         <TableRow
@@ -48,14 +50,16 @@
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:background="@drawable/button3_pressed"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="btn3Click" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:background="@drawable/button4_pressed"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:onClick="btn4Click" />
         </TableRow>
 
     </TableLayout>
@@ -68,7 +72,6 @@
         android:layout_marginStart="174dp"
         android:layout_centerInParent="true"
         android:background="@drawable/center_button"
-        android:text="1"
         android:textColor="#ffffff" />
 
 </RelativeLayout>
