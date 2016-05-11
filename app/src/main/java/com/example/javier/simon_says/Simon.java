@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,8 +22,9 @@ import java.util.Random;
 public class Simon extends Activity {
 
     Button btn1, btn2, btn3, btn4, btnmrk;
+    ImageView pops1, pops2, pops3;
     ArrayList<Integer> sequence = new ArrayList<Integer>();
-    int add, rounds=4, counter=0, i=-1, time=1250;
+    int add, rounds=1, counter=0, i=-1, time=1250, lives=3, lifecount=0;
     Random r = new Random();
 
 
@@ -37,6 +39,9 @@ public class Simon extends Activity {
         btn3 = (Button) findViewById(R.id.button3);
         btn4 = (Button) findViewById(R.id.button4);
         btnmrk = (Button) findViewById(R.id.button);
+        pops1 = (ImageView) findViewById(R.id.imageView);
+        pops2 = (ImageView) findViewById(R.id.imageView2);
+        pops3 = (ImageView) findViewById(R.id.imageView3);
         final MediaPlayer audiobutton1 = MediaPlayer.create(this, R.raw.button1);
         final MediaPlayer audiobutton2 = MediaPlayer.create(this, R.raw.button2);
         final MediaPlayer audiobutton3 = MediaPlayer.create(this, R.raw.button3);
@@ -85,6 +90,14 @@ public class Simon extends Activity {
                 i=-1;
                 rounds=4;
                 counter=0;
+                if(lives==3){
+                  pops3.setVisibility(View.INVISIBLE);
+                }else if(lives==2){
+                    pops2.setVisibility(View.INVISIBLE);
+                }else if (lives==1){
+                    pops1.setVisibility(View.INVISIBLE);
+                }
+                lives--;
                 btnmrk.setText(""+counter);
                 createSequence();
             }
@@ -93,6 +106,19 @@ public class Simon extends Activity {
                 i=-1;
                 counter++;
                 rounds++;
+                lifecount++;
+
+                if(lifecount==3){
+                  if(lives==2){
+                      pops3.setVisibility(View.VISIBLE);
+                      lives++;
+                      lifecount=0;
+                  }else if(lives==1){
+                      pops2.setVisibility(View.VISIBLE);
+                      lives++;
+                      lifecount=0;
+                  }
+                }
                 btnmrk.setText(""+counter);
                 createSequence();
             }

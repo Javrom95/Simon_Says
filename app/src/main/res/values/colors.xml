@@ -6,6 +6,7 @@
 
 
     <color name="background">#fdf5c9</color>
+    <color name="background_shadow">#fbe0be</color>
     <color name="colorbutton1">#ffcc7f</color>
     <color name="colorbutton2">#f17fb9</color>
     <color name="colorbutton3">#c5e9fd</color>
