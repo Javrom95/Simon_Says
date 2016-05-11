@@ -8,13 +8,16 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.javier.simon_says.Simon"
-    android:padding="60dp"
     android:background="@color/background">
 
     <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/tableLayout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingTop="90dp"
+        android:paddingBottom="90dp"
+        android:paddingLeft="45dp"
+        android:paddingRight="45dp">
 
         <TableRow
             android:id="@+id/tableRow1"
@@ -65,13 +68,14 @@
     </TableLayout>
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:id="@+id/button"
-        android:layout_alignParentStart="false"
-        android:layout_marginStart="174dp"
+        android:layout_alignParentBottom="false"
         android:layout_centerInParent="true"
-        android:background="@drawable/center_button"
-        android:textColor="#ffffff" />
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:background="@color/center_space"
+        android:textSize="35dp" />
 
 </RelativeLayout>

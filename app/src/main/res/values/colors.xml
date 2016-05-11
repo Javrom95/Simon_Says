@@ -14,4 +14,6 @@
     <color name="colorpressedbutton2">#e30074</color>
     <color name="colorpressedbutton3">#8bd3fb</color>
     <color name="colorpressedbutton4">#b8d000</color>
+    <color name="center_space">#77370b</color>
+    <color name="black_overlay">#66000000</color>
 </resources>

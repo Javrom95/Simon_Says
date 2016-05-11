@@ -1,5 +1,6 @@
 package com.example.javier.simon_says;
 
+import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -17,14 +18,12 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Simon extends AppCompatActivity {
+public class Simon extends Activity {
 
     Button btn1, btn2, btn3, btn4, btnmrk;
     ArrayList<Integer> sequence = new ArrayList<Integer>();
-    int trans, add, rounds=4, counter=0, i=-1;
+    int add, rounds=4, counter=0, i=-1, time=1250;
     Random r = new Random();
-   /*
-    */
 
 
     @Override
@@ -42,7 +41,7 @@ public class Simon extends AppCompatActivity {
         final MediaPlayer audiobutton2 = MediaPlayer.create(this, R.raw.button2);
         final MediaPlayer audiobutton3 = MediaPlayer.create(this, R.raw.button3);
         final MediaPlayer audiobutton4 = MediaPlayer.create(this, R.raw.button4);
-
+        btnmrk.setText(""+counter);
         createSequence();
 
     }
@@ -52,7 +51,7 @@ public class Simon extends AppCompatActivity {
     public void createSequence(){
         sequence.clear();
         for(byte i=0;i<rounds;i++){
-                    add=r.nextInt((rounds - 1) + 1) + 1;
+                    add=r.nextInt((4 - 1) + 1) + 1;
                     if(add==1){
                         //Reproduce sound.
                         Log.i("Value:","1.");
@@ -71,7 +70,7 @@ public class Simon extends AppCompatActivity {
 
     }
 
-   //This method will check if the buttons are clicked in the order obtained in the createSequence method.
+     //This method will check if the buttons are clicked in the order obtained in the createSequence method.
     public void repeatSequence(int button){
         Log.i("Executing repeatSequ.","Executing.....");
         i++;
@@ -84,6 +83,17 @@ public class Simon extends AppCompatActivity {
             }else{
                 Log.i("Incorrect value.","Recreating sequence.");
                 i=-1;
+                rounds=4;
+                counter=0;
+                btnmrk.setText(""+counter);
+                createSequence();
+            }
+            if((i+1)==sequence.size()){
+                Log.i("Sequence complete.","Sequence com plete.");
+                i=-1;
+                counter++;
+                rounds++;
+                btnmrk.setText(""+counter);
                 createSequence();
             }
     }
