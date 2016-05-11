@@ -88,7 +88,6 @@ public class Simon extends Activity {
             }else{
                 Log.i("Incorrect value.","Recreating sequence.");
                 i=-1;
-                rounds=4;
                 counter=0;
                 if(lives==3){
                   pops3.setVisibility(View.INVISIBLE);
