@@ -1,6 +1,7 @@
 package com.example.javier.simon_says;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.media.MediaPlayer;
 import android.os.CountDownTimer;
 import android.os.Handler;
@@ -24,8 +25,10 @@ public class Simon extends Activity {
     Button btn1, btn2, btn3, btn4, btnmrk;
     ImageView pops1, pops2, pops3;
     ArrayList<Integer> sequence = new ArrayList<Integer>();
-    int add, rounds=1, counter=0, i=-1, time=1250, lives=3, lifecount=0;
+    int add, rounds=1, counter=0, i=-1, time=1750, lives=3, lifecount=0;
     Random r = new Random();
+    Handler handler = new Handler();
+
 
 
     @Override
@@ -49,6 +52,12 @@ public class Simon extends Activity {
         btnmrk.setText(""+counter);
         createSequence();
 
+        Typeface face=Typeface.createFromAsset(getAssets(),
+                "fonts/gomarice_melting_ice_cream.ttf");
+
+       btnmrk.setTypeface(face);
+
+
     }
 
 
@@ -57,19 +66,51 @@ public class Simon extends Activity {
         sequence.clear();
         for(byte i=0;i<rounds;i++){
                     add=r.nextInt((4 - 1) + 1) + 1;
-                    if(add==1){
-                        //Reproduce sound.
-                        Log.i("Value:","1.");
-                    }else if(add==2){
-                        //Reproduce sound,
-                        Log.i("Value:","2.");
-                    }else if(add==3){
-                        //Reproduce sound.
-                        Log.i("Value:","3.");
-                    }else{
-                        //Reproduce sound.
-                        Log.i("Value:","4.");
-                    }
+
+
+                if (add == 1) {
+                    //Reproduce sound.
+                    btn1.setBackgroundResource(R.color.colorpressedbutton1);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            btn1.setBackgroundResource(R.drawable.button1_pressed);
+                        }
+                    }, (time));
+
+                    Log.i("Value:", "1.");
+                } else if (add == 2) {
+                    //Reproduce sound,
+                    btn2.setBackgroundResource(R.color.colorpressedbutton2);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            btn2.setBackgroundResource(R.drawable.button2_pressed);
+                        }
+                    }, (time));
+                    Log.i("Value:", "2.");
+                } else if (add == 3) {
+                    //Reproduce sound.
+                    btn3.setBackgroundResource(R.color.colorpressedbutton3);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            btn3.setBackgroundResource(R.drawable.button3_pressed);
+                        }
+                    }, (time));
+                    Log.i("Value:", "3.");
+                } else {
+                    //Reproduce sound.
+                    btn4.setBackgroundResource(R.color.colorpressedbutton4);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            btn4.setBackgroundResource(R.drawable.button4_pressed);
+                        }
+                    }, (time));
+                    Log.i("Value:", "4.");
+                }
+
                     sequence.add(add);
         }
 
