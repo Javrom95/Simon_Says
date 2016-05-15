@@ -1,21 +1,16 @@
 package com.example.javier.simon_says;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.MediaPlayer;
-import android.os.CountDownTimer;
-import android.os.Handler;
-import android.provider.MediaStore;
-import android.support.annotation.DrawableRes;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
+import android.os.*;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -52,11 +47,9 @@ public class Simon extends Activity {
         btnmrk.setText(""+counter);
         createSequence();
 
-        Typeface face=Typeface.createFromAsset(getAssets(),
-                "fonts/gomarice_melting_ice_cream.ttf");
 
-       btnmrk.setTypeface(face);
-
+        Typeface typeFace=Typeface.createFromAsset(getAssets(),"fonts/chasing.ttf");
+        btnmrk.setTypeface(typeFace);
 
     }
 
@@ -70,22 +63,22 @@ public class Simon extends Activity {
 
                 if (add == 1) {
                     //Reproduce sound.
-                    btn1.setBackgroundResource(R.color.colorpressedbutton1);
+                    btn1.setBackgroundResource(R.drawable.button1_pressed);
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            btn1.setBackgroundResource(R.drawable.button1_pressed);
+                            btn1.setBackgroundResource(R.drawable.button1);
                         }
                     }, (time));
 
                     Log.i("Value:", "1.");
                 } else if (add == 2) {
                     //Reproduce sound,
-                    btn2.setBackgroundResource(R.color.colorpressedbutton2);
+                    btn2.setBackgroundResource(R.drawable.button2_pressed);
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            btn2.setBackgroundResource(R.drawable.button2_pressed);
+                            btn2.setBackgroundResource(R.drawable.button2);
                         }
                     }, (time));
                     Log.i("Value:", "2.");
@@ -95,7 +88,7 @@ public class Simon extends Activity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            btn3.setBackgroundResource(R.drawable.button3_pressed);
+                            btn3.setBackgroundResource(R.drawable.button3);
                         }
                     }, (time));
                     Log.i("Value:", "3.");
@@ -105,7 +98,7 @@ public class Simon extends Activity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            btn4.setBackgroundResource(R.drawable.button4_pressed);
+                            btn4.setBackgroundResource(R.drawable.button4);
                         }
                     }, (time));
                     Log.i("Value:", "4.");
@@ -118,6 +111,9 @@ public class Simon extends Activity {
 
      //This method will check if the buttons are clicked in the order obtained in the createSequence method.
     public void repeatSequence(int button){
+
+
+
         Log.i("Executing repeatSequ.","Executing.....");
         i++;
         Log.i("Value in original:",""+sequence.get(i));
@@ -130,12 +126,15 @@ public class Simon extends Activity {
                 Log.i("Incorrect value.","Recreating sequence.");
                 i=-1;
                 counter=0;
+                lifecount=0;
                 if(lives==3){
                   pops3.setVisibility(View.INVISIBLE);
                 }else if(lives==2){
                     pops2.setVisibility(View.INVISIBLE);
                 }else if (lives==1){
                     pops1.setVisibility(View.INVISIBLE);
+                    Intent message= new Intent(getApplicationContext(),Message.class);
+                    startActivity(message);
                 }
                 lives--;
                 btnmrk.setText(""+counter);
@@ -159,6 +158,8 @@ public class Simon extends Activity {
                       lifecount=0;
                   }
                 }
+
+
                 btnmrk.setText(""+counter);
                 createSequence();
             }
@@ -182,9 +183,13 @@ public class Simon extends Activity {
         repeatSequence(4);
     }
 
-
-
- }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent back= new Intent(getApplicationContext(),Menu.class);
+        startActivity(back);
+    }
+}
 
 
 

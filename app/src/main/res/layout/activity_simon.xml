@@ -38,7 +38,7 @@
                 android:id="@+id/button1"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:background="@drawable/button1_pressed"
+                android:background="@drawable/button1"
                 android:layout_weight="1"
                 android:onClick="btn1Click" />
 
@@ -46,7 +46,7 @@
                 android:id="@+id/button2"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:background="@drawable/button2_pressed"
+                android:background="@drawable/button2"
                 android:layout_weight="1"
                 android:onClick="btn2Click" />
         </TableRow>
@@ -61,7 +61,7 @@
                 android:id="@+id/button3"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:background="@drawable/button3_pressed"
+                android:background="@drawable/button3"
                 android:layout_weight="1"
                 android:onClick="btn3Click" />
 
@@ -69,7 +69,7 @@
                 android:id="@+id/button4"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:background="@drawable/button4_pressed"
+                android:background="@drawable/button4"
                 android:layout_weight="1"
                 android:onClick="btn4Click" />
         </TableRow>
