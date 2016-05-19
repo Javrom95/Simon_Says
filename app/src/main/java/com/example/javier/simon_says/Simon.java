@@ -45,7 +45,28 @@ public class Simon extends Activity {
         final MediaPlayer audiobutton3 = MediaPlayer.create(this, R.raw.button3);
         final MediaPlayer audiobutton4 = MediaPlayer.create(this, R.raw.button4);
         btnmrk.setText(""+counter);
-        createSequence();
+
+        btn1.setEnabled(false);
+        btn2.setEnabled(false);
+        btn3.setEnabled(false);
+        btn4.setEnabled(false);
+
+        new CountDownTimer(3000, 1000) {
+
+            public void onTick(long millisUntilFinished) {
+            }
+
+            public void onFinish() {
+                btn1.setEnabled(true);
+                btn2.setEnabled(true);
+                btn3.setEnabled(true);
+                btn4.setEnabled(true);
+                createSequence();
+            }
+        }.start();
+
+
+
 
 
         Typeface typeFace=Typeface.createFromAsset(getAssets(),"fonts/chasing.ttf");
@@ -56,58 +77,71 @@ public class Simon extends Activity {
 
     //Method that creates the sequence of numbers.
     public void createSequence(){
+
         sequence.clear();
         for(byte i=0;i<rounds;i++){
-                    add=r.nextInt((4 - 1) + 1) + 1;
+            add=r.nextInt((4 - 1) + 1) + 1;
 
 
-                if (add == 1) {
-                    //Reproduce sound.
-                    btn1.setBackgroundResource(R.drawable.button1_pressed);
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            btn1.setBackgroundResource(R.drawable.button1);
-                        }
-                    }, (time));
 
-                    Log.i("Value:", "1.");
-                } else if (add == 2) {
-                    //Reproduce sound,
-                    btn2.setBackgroundResource(R.drawable.button2_pressed);
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            btn2.setBackgroundResource(R.drawable.button2);
-                        }
-                    }, (time));
-                    Log.i("Value:", "2.");
-                } else if (add == 3) {
-                    //Reproduce sound.
-                    btn3.setBackgroundResource(R.color.colorpressedbutton3);
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            btn3.setBackgroundResource(R.drawable.button3);
-                        }
-                    }, (time));
-                    Log.i("Value:", "3.");
-                } else {
-                    //Reproduce sound.
-                    btn4.setBackgroundResource(R.color.colorpressedbutton4);
-                    handler.postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            btn4.setBackgroundResource(R.drawable.button4);
-                        }
-                    }, (time));
-                    Log.i("Value:", "4.");
-                }
+            if (add == 1) {
+                //Reproduce sound.
+                btn1.setBackgroundResource(R.drawable.button1_pressed);
+                new CountDownTimer(time, 1000) {
 
-                    sequence.add(add);
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    public void onFinish() {
+                        btn1.setBackgroundResource(R.drawable.button1);
+                    }
+                }.start();
+
+                Log.i("Value:", "1.");
+            } else if (add == 2) {
+                //Reproduce sound,
+                btn2.setBackgroundResource(R.drawable.button2_pressed);
+                new CountDownTimer(time, 1000) {
+
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    public void onFinish() {
+                        btn2.setBackgroundResource(R.drawable.button2);
+                    }
+                }.start();
+                Log.i("Value:", "2.");
+            } else if (add == 3) {
+                //Reproduce sound.
+                btn3.setBackgroundResource(R.color.colorpressedbutton3);
+                new CountDownTimer(time, 1000) {
+
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    public void onFinish() {
+                        btn3.setBackgroundResource(R.drawable.button3);
+                    }
+                }.start();
+                Log.i("Value:", "3.");
+            } else {
+                //Reproduce sound.
+                btn4.setBackgroundResource(R.color.colorpressedbutton4);
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        btn4.setBackgroundResource(R.drawable.button4);
+                    }
+                }, (time));
+                Log.i("Value:", "4.");
+            }
+
+            sequence.add(add);
         }
-
     }
+
+
+
 
      //This method will check if the buttons are clicked in the order obtained in the createSequence method.
     public void repeatSequence(int button){
@@ -182,6 +216,8 @@ public class Simon extends Activity {
         Log.i("Value pushed:","4.");
         repeatSequence(4);
     }
+
+
 
     @Override
     public void onBackPressed() {

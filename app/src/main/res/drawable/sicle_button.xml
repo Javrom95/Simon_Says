@@ -2,18 +2,12 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:state_pressed="true" >
         <shape android:shape="rectangle"  >
-            <corners android:radius="5dip" />
-            <stroke android:width="5dip" android:color="@color/color4siclebutton" />
-            <gradient android:angle="-90" android:startColor="@color/color4siclebutton" android:endColor="@color/color4siclebutton"  />
-        </shape>
-    </item>
-    <item android:state_focused="true">
-        <shape android:shape="rectangle"  >
-            <corners android:radius="5dip" />
+            <corners android:radius="5dip"/>
             <stroke android:width="1dip" android:color="@color/color4siclebutton" />
-            <solid android:color="@color/color4siclebutton"/>
+            <gradient android:angle="-90" android:startColor="@color/color4siclebuttonpressed" android:endColor="@color/color4siclebuttonpressed"  />
         </shape>
     </item>
+
     <item android:state_pressed="false">
         <shape android:shape="rectangle"  >
             <corners android:radius="5dip" />
@@ -21,4 +15,9 @@
             <gradient android:angle="-90" android:startColor="@color/color4siclebutton" android:endColor="@color/color4siclebutton" />
         </shape>
     </item>
+
+
+
+
+
 </selector>

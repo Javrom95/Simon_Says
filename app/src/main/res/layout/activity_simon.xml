@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.javier.simon_says.Simon"
-    android:background="@drawable/simon_background_2">
+    android:background="@drawable/simon">
 
     <LinearLayout
         android:orientation="horizontal"
