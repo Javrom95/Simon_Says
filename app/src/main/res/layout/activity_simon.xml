@@ -76,42 +76,50 @@
 
     </TableLayout>
 
-    <Button
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:id="@+id/button"
-        android:layout_alignParentBottom="false"
-        android:layout_centerInParent="true"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-        android:background="@color/center_space"
-        android:textSize="45dp" />
-
-    <LinearLayout
+    <RelativeLayout
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/linearLayout">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-        <ImageView
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayout">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageView"
+                android:background="@drawable/popsicle" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageView2"
+                android:background="@drawable/popsicle" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/imageView3"
+                android:background="@drawable/popsicle" />
+
+        </LinearLayout>
+
+        <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
-            android:id="@+id/imageView"
-            android:background="@drawable/popsicle" />
+            android:id="@+id/button"
+            android:layout_alignParentRight="true"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:background="@drawable/marker"
+            android:textSize="45dp"
+            android:allowUndo="true" />
 
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/imageView2"
-            android:background="@drawable/popsicle" />
-
-        <ImageView
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/imageView3"
-            android:background="@drawable/popsicle" />
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

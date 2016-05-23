@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import org.w3c.dom.Text;
@@ -19,12 +20,14 @@ public class Menu extends Activity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chooser);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         title1 = (TextView) findViewById(R.id.textView);
         title2 = (TextView) findViewById(R.id.textView2);
         title3 = (TextView) findViewById(R.id.textView3);
 
         Typeface typeFace=Typeface.createFromAsset(getAssets(),"fonts/chasing.ttf");
-        title1.setTypeface(typeFace);
+        Typeface titleFace=Typeface.createFromAsset(getAssets(),"fonts/titleapp.ttf");
+        title1.setTypeface(titleFace);
         title2.setTypeface(typeFace);
         title3.setTypeface(typeFace);
 

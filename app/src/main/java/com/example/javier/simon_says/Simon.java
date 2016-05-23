@@ -3,7 +3,6 @@ package com.example.javier.simon_says;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.media.MediaPlayer;
 import android.os.*;
 import android.util.Log;
 import android.view.View;
@@ -40,10 +39,6 @@ public class Simon extends Activity {
         pops1 = (ImageView) findViewById(R.id.imageView);
         pops2 = (ImageView) findViewById(R.id.imageView2);
         pops3 = (ImageView) findViewById(R.id.imageView3);
-        final MediaPlayer audiobutton1 = MediaPlayer.create(this, R.raw.button1);
-        final MediaPlayer audiobutton2 = MediaPlayer.create(this, R.raw.button2);
-        final MediaPlayer audiobutton3 = MediaPlayer.create(this, R.raw.button3);
-        final MediaPlayer audiobutton4 = MediaPlayer.create(this, R.raw.button4);
         btnmrk.setText(""+counter);
 
         btn1.setEnabled(false);
@@ -51,23 +46,16 @@ public class Simon extends Activity {
         btn3.setEnabled(false);
         btn4.setEnabled(false);
 
-        new CountDownTimer(3000, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-            }
-
-            public void onFinish() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
                 btn1.setEnabled(true);
                 btn2.setEnabled(true);
                 btn3.setEnabled(true);
                 btn4.setEnabled(true);
                 createSequence();
             }
-        }.start();
-
-
-
-
+        }, 3000);
 
         Typeface typeFace=Typeface.createFromAsset(getAssets(),"fonts/chasing.ttf");
         btnmrk.setTypeface(typeFace);
@@ -75,69 +63,90 @@ public class Simon extends Activity {
     }
 
 
+   public void setState(final Button b, final int state) {
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                b.setBackgroundResource(state);
+            }
+        });
+    }
+
     //Method that creates the sequence of numbers.
     public void createSequence(){
 
-        sequence.clear();
-        for(byte i=0;i<rounds;i++){
-            add=r.nextInt((4 - 1) + 1) + 1;
+        new Thread() {
+            public void run() {
+
+                try {
+                    Thread.sleep(time/2);
+                }catch(InterruptedException e){
+
+                }
+
+                                sequence.clear();
+                                for(byte i=0;i<rounds;i++){
+                                    add=r.nextInt((4 - 1) + 1) + 1;
+
+                                    if (add == 1) {
+                                        setState(btn1,R.drawable.button1_pressed);
+
+                                        try {
+                                            Log.i("Waiting for 1.","Waiting for 1.");
+                                            Thread.sleep(time);
+                                            setState(btn1,R.drawable.button1);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+
+                                        Log.i("Value:", "1.");
+                                    } else if (add == 2) {
+                                        setState(btn2,R.drawable.button2_pressed);
+                                        try {
+                                            Log.i("Waiting for 2.","Waiting for 2.");
+                                            Thread.sleep(time);
+                                            setState(btn2,R.drawable.button2);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
 
 
 
-            if (add == 1) {
-                //Reproduce sound.
-                btn1.setBackgroundResource(R.drawable.button1_pressed);
-                new CountDownTimer(time, 1000) {
+                                        Log.i("Value:", "2.");
+                                    } else if (add == 3) {
+                                        setState(btn3,R.color.colorpressedbutton3);
+                                        try {
+                                            Log.i("Waiting for 3.","Waiting for 3.");
+                                            Thread.sleep(time);
+                                            setState(btn3,R.drawable.button3);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
 
-                    public void onTick(long millisUntilFinished) {
-                    }
 
-                    public void onFinish() {
-                        btn1.setBackgroundResource(R.drawable.button1);
-                    }
-                }.start();
+                                        Log.i("Value:", "3.");
+                                    } else {
+                                        setState(btn4,R.color.colorpressedbutton4);
+                                        try {
+                                            Log.i("Waiting for 4.","Waiting for 4.");
+                                            Thread.sleep(time);
+                                            setState(btn4,R.drawable.button4);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
 
-                Log.i("Value:", "1.");
-            } else if (add == 2) {
-                //Reproduce sound,
-                btn2.setBackgroundResource(R.drawable.button2_pressed);
-                new CountDownTimer(time, 1000) {
+                                        Log.i("Value:", "4.");
+                                    }
 
-                    public void onTick(long millisUntilFinished) {
-                    }
+                                    sequence.add(add);
 
-                    public void onFinish() {
-                        btn2.setBackgroundResource(R.drawable.button2);
-                    }
-                }.start();
-                Log.i("Value:", "2.");
-            } else if (add == 3) {
-                //Reproduce sound.
-                btn3.setBackgroundResource(R.color.colorpressedbutton3);
-                new CountDownTimer(time, 1000) {
 
-                    public void onTick(long millisUntilFinished) {
-                    }
 
-                    public void onFinish() {
-                        btn3.setBackgroundResource(R.drawable.button3);
-                    }
-                }.start();
-                Log.i("Value:", "3.");
-            } else {
-                //Reproduce sound.
-                btn4.setBackgroundResource(R.color.colorpressedbutton4);
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        btn4.setBackgroundResource(R.drawable.button4);
-                    }
-                }, (time));
-                Log.i("Value:", "4.");
-            }
+                                }
 
-            sequence.add(add);
-        }
+                }
+        }.start();
+
     }
 
 
@@ -146,16 +155,12 @@ public class Simon extends Activity {
      //This method will check if the buttons are clicked in the order obtained in the createSequence method.
     public void repeatSequence(int button){
 
-
-
         Log.i("Executing repeatSequ.","Executing.....");
         i++;
         Log.i("Value in original:",""+sequence.get(i));
             if (button == sequence.get(i)) {
-                Log.i("Aladeen1:",""+i);
                 Log.i("Correct.","Correct value.");
                 Log.i("Position: ","Position "+i+" of "+sequence.size()+".");
-                Log.i("Aladeen2:",""+i);
             }else{
                 Log.i("Incorrect value.","Recreating sequence.");
                 i=-1;
@@ -216,7 +221,6 @@ public class Simon extends Activity {
         Log.i("Value pushed:","4.");
         repeatSequence(4);
     }
-
 
 
     @Override
