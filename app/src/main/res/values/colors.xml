@@ -24,7 +24,7 @@
     <color name="colorbutton11">#c5e9fd</color>
     <color name="colorbutton12">#D0E8BE</color>
     <color name="colorbutton13">#dbe77f</color>
-
+    <color name="colorbutton14">#a972d9</color>
 
     <color name="colorpressedbutton1">#ff9900</color>
     <color name="colorpressedbutton2">#e30074</color>
@@ -41,7 +41,7 @@
     <color name="colorpressedbutton11">#8bd3fb</color>
     <color name="colorpressedbutton12">#9FD28A</color>
     <color name="colorpressedbutton13">#b8d000</color>
-
+    <color name="colorpressedbutton14">#672a9c</color>
 
     <color name="color4siclebutton">#f37bad</color>
     <color name="color4siclebuttonpressed">#f595bd</color>

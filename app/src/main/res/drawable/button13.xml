@@ -3,7 +3,7 @@
 
     <item android:state_pressed="false">
         <shape android:shape="rectangle"  >
-            <gradient android:angle="-90" android:startColor="@color/colorbutton13" android:endColor="@color/colorbutton13" />
+            <gradient android:angle="-90" android:startColor="@color/colorbutton14" android:endColor="@color/colorbutton14" />
         </shape>
     </item>
 
@@ -11,7 +11,7 @@
 
     <item android:state_pressed="true">
         <shape android:shape="rectangle"  >
-            <gradient android:angle="-90" android:startColor="@color/colorpressedbutton13" android:endColor="@color/colorpressedbutton13" />
+            <gradient android:angle="-90" android:startColor="@color/colorpressedbutton14" android:endColor="@color/colorpressedbutton14" />
         </shape>
     </item>
 
