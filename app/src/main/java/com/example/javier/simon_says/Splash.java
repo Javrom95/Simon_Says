@@ -24,7 +24,7 @@ public class Splash extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/chasing.ttf");
+        Typeface custom_font = Typeface.createFromAsset(getAssets(), "fonts/titleapp.ttf");
         text = (TextView) findViewById(R.id.textView6);
         image = (ImageView) findViewById(R.id.imageView4);
         text.setTypeface(custom_font);

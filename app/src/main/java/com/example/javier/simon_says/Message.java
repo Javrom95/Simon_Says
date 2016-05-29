@@ -11,8 +11,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by javier on 15/05/16.
  */
@@ -29,7 +27,7 @@ public class Message extends Activity{
         setContentView(R.layout.actitivy_message);
         title1 = (TextView) findViewById(R.id.textView4);
         title2 = (TextView) findViewById(R.id.textView5);
-        btn1 = (Button) findViewById(R.id.button5);
+        btn1 = (Button) findViewById(R.id.button9);
         btn2 = (Button) findViewById(R.id.button6);
 
         DisplayMetrics display = new DisplayMetrics();

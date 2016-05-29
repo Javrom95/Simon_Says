@@ -78,12 +78,6 @@ public class Simon extends Activity {
         new Thread() {
             public void run() {
 
-                try {
-                    Thread.sleep(time/2);
-                }catch(InterruptedException e){
-
-                }
-
                                 sequence.clear();
                                 for(byte i=0;i<rounds;i++){
                                     add=r.nextInt((4 - 1) + 1) + 1;
@@ -98,7 +92,11 @@ public class Simon extends Activity {
                                         } catch (InterruptedException e) {
                                             e.printStackTrace();
                                         }
+                                        try {
+                                            Thread.sleep(time/2);
+                                        }catch(InterruptedException e){
 
+                                        }
                                         Log.i("Value:", "1.");
                                     } else if (add == 2) {
                                         setState(btn2,R.drawable.button2_pressed);
@@ -109,9 +107,11 @@ public class Simon extends Activity {
                                         } catch (InterruptedException e) {
                                             e.printStackTrace();
                                         }
+                                        try {
+                                            Thread.sleep(time/2);
+                                        }catch(InterruptedException e){
 
-
-
+                                        }
                                         Log.i("Value:", "2.");
                                     } else if (add == 3) {
                                         setState(btn3,R.color.colorpressedbutton3);
@@ -122,8 +122,11 @@ public class Simon extends Activity {
                                         } catch (InterruptedException e) {
                                             e.printStackTrace();
                                         }
+                                        try {
+                                            Thread.sleep(time/2);
+                                        }catch(InterruptedException e){
 
-
+                                        }
                                         Log.i("Value:", "3.");
                                     } else {
                                         setState(btn4,R.color.colorpressedbutton4);
@@ -134,7 +137,11 @@ public class Simon extends Activity {
                                         } catch (InterruptedException e) {
                                             e.printStackTrace();
                                         }
+                                        try {
+                                            Thread.sleep(time/2);
+                                        }catch(InterruptedException e){
 
+                                        }
                                         Log.i("Value:", "4.");
                                     }
 

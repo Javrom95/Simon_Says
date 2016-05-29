@@ -7,14 +7,42 @@
 
     <color name="background">#fdf5c9</color>
     <color name="background_shadow">#fbe0be</color>
+
+
     <color name="colorbutton1">#ffcc7f</color>
     <color name="colorbutton2">#f17fb9</color>
     <color name="colorbutton3">#c5e9fd</color>
     <color name="colorbutton4">#dbe77f</color>
+
+
+    <color name="colorbutton5">#ffcc7f</color>
+    <color name="colorbutton6">#FCB98E</color>
+    <color name="colorbutton7">#f17fb9</color>
+    <color name="colorbutton8">#DFDCC4</color>
+    <color name="colorbutton9">#F44336</color>
+    <color name="colorbutton10">#E2C592</color>
+    <color name="colorbutton11">#c5e9fd</color>
+    <color name="colorbutton12">#D0E8BE</color>
+    <color name="colorbutton13">#dbe77f</color>
+
+
     <color name="colorpressedbutton1">#ff9900</color>
     <color name="colorpressedbutton2">#e30074</color>
     <color name="colorpressedbutton3">#8bd3fb</color>
     <color name="colorpressedbutton4">#b8d000</color>
+
+
+    <color name="colorpressedbutton5">#ff9900</color>
+    <color name="colorpressedbutton6">#F56329</color>
+    <color name="colorpressedbutton7">#e30074</color>
+    <color name="colorpressedbutton8">#C5B67E</color>
+    <color name="colorpressedbutton9">#D32F2F</color>
+    <color name="colorpressedbutton10">#C97D2E</color>
+    <color name="colorpressedbutton11">#8bd3fb</color>
+    <color name="colorpressedbutton12">#9FD28A</color>
+    <color name="colorpressedbutton13">#b8d000</color>
+
+
     <color name="color4siclebutton">#f37bad</color>
     <color name="color4siclebuttonpressed">#f595bd</color>
     <color name="acecreambutton">#89E894</color>

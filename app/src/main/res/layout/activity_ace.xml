@@ -35,43 +35,93 @@
             android:layout_weight="1.5">
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/button5"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:background="@drawable/button1"
+                android:background="@drawable/button5"
                 android:layout_weight="1"
-                android:onClick="btn1Click" />
+                android:onClick="btn5Click" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/button6"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:background="@drawable/button2"
+                android:background="@drawable/button6"
                 android:layout_weight="1"
-                android:onClick="btn2Click" />
+                android:onClick="btn6Click" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button7"
+                android:layout_weight="1"
+                android:onClick="btn7Click" />
+
         </TableRow>
 
         <TableRow
             android:id="@+id/tableRow2"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
-            android:layout_weight="1.5" >
+            android:layout_weight="1.5">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button8"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:background="@drawable/button3"
+                android:background="@drawable/button8"
                 android:layout_weight="1"
-                android:onClick="btn3Click" />
+                android:onClick="btn8Click" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/button9"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:background="@drawable/button4"
+                android:background="@drawable/button9"
                 android:layout_weight="1"
-                android:onClick="btn4Click" />
+                android:onClick="btn9Click" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button10"
+                android:layout_weight="1"
+                android:onClick="btn10Click" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5">
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button11"
+                android:layout_weight="1"
+                android:onClick="btn11Click" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button12"
+                android:layout_weight="1"
+                android:onClick="btn12Click" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button13"
+                android:layout_weight="1"
+                android:onClick="btn13Click" />
+
         </TableRow>
 
     </TableLayout>

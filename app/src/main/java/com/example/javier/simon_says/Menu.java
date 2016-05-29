@@ -39,6 +39,12 @@ public class Menu extends Activity{
         startActivity(sipoptent);
     }
 
+    public void aceCall(View view){
+        Intent acetent= new Intent(getApplicationContext(),Ace.class);
+        startActivity(acetent);
+    }
+
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();
