@@ -14,7 +14,7 @@ import android.widget.TextView;
 /**
  * Created by javier on 15/05/16.
  */
-public class Message extends Activity{
+public class Message4 extends Activity{
 
   TextView title1, title2, btn1, btn2;
 

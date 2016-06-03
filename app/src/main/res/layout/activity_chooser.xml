@@ -94,4 +94,21 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="false"
+        android:paddingLeft="15dp"
+        android:paddingBottom="15dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:id="@+id/imageView6"
+            android:src="@drawable/info"
+            android:onClick="infoCall" />
+    </LinearLayout>
+
 </RelativeLayout>

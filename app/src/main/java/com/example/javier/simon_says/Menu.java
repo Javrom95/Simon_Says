@@ -44,6 +44,11 @@ public class Menu extends Activity{
         startActivity(acetent);
     }
 
+    public void infoCall(View view){
+            Intent infotent= new Intent(getApplicationContext(),InfoActivity.class);
+        startActivity(infotent);
+    }
+
 
     @Override
     public void onBackPressed() {

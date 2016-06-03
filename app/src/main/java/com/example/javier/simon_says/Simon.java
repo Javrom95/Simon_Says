@@ -16,7 +16,7 @@ import java.util.Random;
 
 public class Simon extends Activity {
 
-    Button btn1, btn2, btn3, btn4, btnmrk;
+    Button btn1, btn2, btn3, btn4, btn9, btn10, btn11, btn12, btn13, btnmrk;
     ImageView pops1, pops2, pops3;
     ArrayList<Integer> sequence = new ArrayList<Integer>();
     int add, rounds=1, counter=0, i=-1, time=1750, lives=3, lifecount=0;
@@ -41,18 +41,13 @@ public class Simon extends Activity {
         pops3 = (ImageView) findViewById(R.id.imageView3);
         btnmrk.setText(""+counter);
 
-        btn1.setEnabled(false);
-        btn2.setEnabled(false);
-        btn3.setEnabled(false);
-        btn4.setEnabled(false);
+        setEnabledFalse();
+
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                btn1.setEnabled(true);
-                btn2.setEnabled(true);
-                btn3.setEnabled(true);
-                btn4.setEnabled(true);
+                setEnabledTrue();
                 createSequence();
             }
         }, 3000);
@@ -72,13 +67,48 @@ public class Simon extends Activity {
         });
     }
 
+    public void setEnabledFalse(){
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                btn1.setEnabled(false);
+                btn2.setEnabled(false);
+                btn3.setEnabled(false);
+                btn4.setEnabled(false);
+            }
+        });
+
+    }
+
+    public void setEnabledTrue(){
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                btn1.setEnabled(true);
+                btn2.setEnabled(true);
+                btn3.setEnabled(true);
+                btn4.setEnabled(true);
+            }
+        });
+
+    }
+
+
     //Method that creates the sequence of numbers.
     public void createSequence(){
+
+        setEnabledFalse();
 
         new Thread() {
             public void run() {
 
-                                sequence.clear();
+                try {
+                    Thread.sleep(time/2);
+                }catch(InterruptedException e){
+
+                }
+
+                sequence.clear();
                                 for(byte i=0;i<rounds;i++){
                                     add=r.nextInt((4 - 1) + 1) + 1;
 
@@ -92,11 +122,6 @@ public class Simon extends Activity {
                                         } catch (InterruptedException e) {
                                             e.printStackTrace();
                                         }
-                                        try {
-                                            Thread.sleep(time/2);
-                                        }catch(InterruptedException e){
-
-                                        }
                                         Log.i("Value:", "1.");
                                     } else if (add == 2) {
                                         setState(btn2,R.drawable.button2_pressed);
@@ -106,11 +131,6 @@ public class Simon extends Activity {
                                             setState(btn2,R.drawable.button2);
                                         } catch (InterruptedException e) {
                                             e.printStackTrace();
-                                        }
-                                        try {
-                                            Thread.sleep(time/2);
-                                        }catch(InterruptedException e){
-
                                         }
                                         Log.i("Value:", "2.");
                                     } else if (add == 3) {
@@ -122,11 +142,6 @@ public class Simon extends Activity {
                                         } catch (InterruptedException e) {
                                             e.printStackTrace();
                                         }
-                                        try {
-                                            Thread.sleep(time/2);
-                                        }catch(InterruptedException e){
-
-                                        }
                                         Log.i("Value:", "3.");
                                     } else {
                                         setState(btn4,R.color.colorpressedbutton4);
@@ -137,22 +152,25 @@ public class Simon extends Activity {
                                         } catch (InterruptedException e) {
                                             e.printStackTrace();
                                         }
-                                        try {
-                                            Thread.sleep(time/2);
-                                        }catch(InterruptedException e){
-
-                                        }
                                         Log.i("Value:", "4.");
                                     }
 
                                     sequence.add(add);
 
+                                    try {
+                                        Thread.sleep(time/4);
+                                    }catch(InterruptedException e){
 
+                                    }
 
                                 }
 
+                setEnabledTrue();
+
                 }
         }.start();
+
+
 
     }
 
@@ -179,7 +197,7 @@ public class Simon extends Activity {
                     pops2.setVisibility(View.INVISIBLE);
                 }else if (lives==1){
                     pops1.setVisibility(View.INVISIBLE);
-                    Intent message= new Intent(getApplicationContext(),Message.class);
+                    Intent message= new Intent(getApplicationContext(),Message4.class);
                     startActivity(message);
                 }
                 lives--;

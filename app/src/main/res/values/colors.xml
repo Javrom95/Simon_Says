@@ -48,5 +48,12 @@
     <color name="acecreambutton">#89E894</color>
     <color name="acecreambuttonpressed">#7bd085</color>
     <color name="center_space">#77370b</color>
+    <color name="info_button_false">#bdbdbd</color>
+    <color name="info_button_true">#d3d3d3</color>
+
+
+
+
+
     <color name="black_overlay">#66000000</color>
 </resources>
