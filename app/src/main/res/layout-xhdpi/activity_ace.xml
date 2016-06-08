@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.javier.simon_says.Simon"
+    android:background="@drawable/simon">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1"
+        android:layout_alignParentStart="false">
+
+    </LinearLayout>
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_margin="135dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="60dp">
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5">
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button5"
+                android:layout_weight="1"
+                android:onClick="btn5Click" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button6"
+                android:layout_weight="1"
+                android:onClick="btn6Click" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button7"
+                android:layout_weight="1"
+                android:onClick="btn7Click" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5">
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button8"
+                android:layout_weight="1"
+                android:onClick="btn8Click" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button9"
+                android:layout_weight="1"
+                android:onClick="btn9Click" />
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button10"
+                android:layout_weight="1"
+                android:onClick="btn10Click" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1.5">
+
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button11"
+                android:layout_weight="1"
+                android:onClick="btn11Click" />
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button12"
+                android:layout_weight="1"
+                android:onClick="btn12Click" />
+
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:background="@drawable/button13"
+                android:layout_weight="1"
+                android:onClick="btn13Click" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <RelativeLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/linearLayout">
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView"
+                android:background="@mipmap/popsicle" />
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView2"
+                android:background="@mipmap/popsicle" />
+
+            <ImageView
+                android:layout_width="125dp"
+                android:layout_height="125dp"
+                android:id="@+id/imageView3"
+                android:background="@mipmap/popsicle" />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:id="@+id/btnmrkace"
+            android:layout_alignParentRight="true"
+            android:textAlignment="center"
+            android:textColor="#ffffff"
+            android:background="@drawable/marker"
+            android:textSize="45dp"
+            android:allowUndo="true" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

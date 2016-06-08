@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle"  >
+            <gradient android:angle="-90" android:startColor="@color/colorbutton9" android:endColor="@color/colorbutton9" />
+        </shape>
+    </item>
+
+
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle"  >
+            <gradient android:angle="-90" android:startColor="@color/colorpressedbutton9" android:endColor="@color/colorpressedbutton9" />
+        </shape>
+    </item>
+
+</selector>
