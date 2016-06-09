@@ -1,5 +1,6 @@
-<resources>
-    <!--
+<!--
+The project Icemon Says was made by Javier Romero Sánchez and Matías Ramírez Cobreros at 9 of June of 2016.
+
 This file is part of Icemon Says
 Icemon Says is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -15,7 +16,3 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 -->
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
-</resources>
