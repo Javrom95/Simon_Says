@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="1"
-        android:layout_alignParentStart="false">
+        android:layout_alignParentStart="false"
+        android:layout_alignParentLeft="false">
 
     </LinearLayout>
 
@@ -24,7 +25,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:layout_margin="55dp"
+        android:layout_margin="60dp"
         android:paddingTop="60dp"
         android:paddingBottom="60dp">
 
@@ -93,19 +94,19 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:id="@+id/imageView"
-                android:background="@mipmap/popsicle" />
+                android:background="@drawable/popsicle" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:id="@+id/imageView2"
-                android:background="@mipmap/popsicle" />
+                android:background="@drawable/popsicle" />
 
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:id="@+id/imageView3"
-                android:background="@mipmap/popsicle" />
+                android:background="@drawable/popsicle" />
 
         </LinearLayout>
 
